@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Company">
+   <resultMap id="hireResultSet" type="Hire">
+      <id column="HNO" property="hNo" />
+      <result column="HCOMPANY" property="hCompany" />
+      <result column="HMIN" property="hMin" />
+      <result column="HMAX" property="hMax" />
+      <result column="HSTARTDATE" property="hStartdate" />
+      <result column="HENDDATE" property="hEnddate" />
+      <result column="HURL" property="hUrl" />
+      <result column="HJOBCODE" property="hJobcode" />
+   </resultMap>
+
+   <resultMap id="thireResultSet" type="THire">
+      <id column="THNO" property="tHNo" />
+      <result column="THCOMPANY" property="tHCompany" />
+   </resultMap>
+
+   <resultMap id="companyResultSet" type="Company">
+      <id column="CID" property="cId" />
+      <result column="CNAME" property="cName" />
+      <result column="CDIV" property="cDiv" />
+      <result column="CLOCATION" property="cLocation" />
+      <result column="CSECTOR" property="cSector" />
+      <result column="CSALARY" property="cSalary" />
+      <result column="CINFO" property="cInfo" />
+      <result column="CPERSON" property="cPerson" />
+      <result column="CSALES" property="cSales" />
+      <result column="CCAPITAL" property="cCapital" />
+      <result column="CLEADER" property="cLeader" />
+      <result column="CURL" property="cUrl" />
+   </resultMap>
+
+   <select id="listHire" resultMap="hireResultSet">
+      SELECT * FROM HIRE
+   </select>
+
+   <select id="listTHire" resultMap="thireResultSet">
+      SELECT * FROM THIRE
+   </select>
+
+   <select id="selecthMin" parameterType="string"
+      resultType="string">
+      SELECT HMIN FROM HIRE WHERE HNO = #{hNo}
+   </select>
+
+   <select id="selecthMax" parameterType="string"
+      resultType="string">
+      SELECT HMAX FROM HIRE WHERE HNO = #{hNo}
+   </select>
+
+   <insert id="insertCompany" parameterType="Company">
+      INSERT INTO COMPANY
+      VALUES(#{cId}, #{cName}, #{cDiv}, #{cLocation},
+      #{cSector},
+      #{cSalary},
+      #{cInfo}, #{cPerson}, #{cSales}, #{cCapital},
+      #{cLeader},
+      #{cUrl})
+   </insert>
+
+   <select id="listCompany" parameterType="hashMap"
+      resultMap="companyResultSet">
+      SELECT * FROM COMPANY
+      
+      
+      <where>
+      
+         <if test="cDiv.size != 0">
+            CDIV IN
+            <foreach collection="cDiv" item="cDiv" open="("
+               separator="," close=")">
+               #{cDiv}
+            </foreach>
+         </if>
+
+         <if test="cLocation.size != 0">
+            AND
+            <foreach collection="cLocation" item="cLocation" open="("
+               separator=" OR " close=")">
+               CLOCATION LIKE '%'|| #{cLocation} ||'%'
+            </foreach>
+         </if>
+
+         <if test="cSalary.size != 0">
+            AND
+            <foreach collection="cSalary" item="cSalary" open="("
+               separator=" OR " close=")">
+               <if test="cSalary == 25000000">
+                  <![CDATA[
+                  CSALARY < 25000000
+                  ]]>
+               </if>
+
+               <if test="cSalary == 30000000">
+                  CSALARY BETWEEN 25000001 AND 30000000
+               </if>
+
+               <if test="cSalary == 35000000">
+                  CSALARY BETWEEN 30000001 AND 35000000
+               </if>
+
+               <if test="cSalary == 45000000">
+                  CSALARY BETWEEN 35000001 AND 45000000
+               </if>
+
+               <if test="cSalary == 50000000">
+                  CSALARY BETWEEN 45000001 AND 50000000
+               </if>
+
+               <if test="cSalary == 50000001">
+                  <![CDATA[
+                  CSALARY >= 50000001
+                  ]]>
+               </if>
+            </foreach>
+         </if>
+         
+         <if test="searchWord != null">
+         AND cName like '%'|| #{searchWord} ||'%'
+         </if>
+         
+      </where>
+
+
+      <!-- <choose> <when test="cDiv.size != 0"> WHERE CDIV IN <foreach collection="cDiv" 
+         item="cDiv" open="(" separator="," close=")"> #{cDiv} </foreach> </when> 
+         <when test="cLocation.size != 0"> WHERE CLOCATION IN <foreach collection="cLocation" 
+         item="cLocation" open="(" separator="," close=")"> #{cLocation} </foreach> 
+         </when> </choose> -->
+
+      ORDER BY CID
+   </select>
+
+   <select id="listAll" resultMap="companyResultSet">
+      <include refid="pagingHeader" />
+      select * from company
+      <include refid="search" />
+      <include refid="check" />
+      <include refid="pagingFooter" />
+   </select>
+
+   <select id="getListCount" resultType="_int">
+      select count(*)
+      from company
+      <include refid="search" />
+   </select>
+
+   <select id="selectCompany" resultMap="companyResultSet">
+      select * from company where
+      cId = #{cId}
+   </select>
+
+   <sql id="pagingHeader">
+      select *
+      from (
+      select rownum as rn, A.*
+      from (
+   </sql>
+
+   <sql id="pagingFooter">
+      ) A
+      ) where rn between #{start} and #{end}
+   </sql>
+
+   <sql id="search">
+      where cName like '%'|| #{searchWord} ||'%'
+   </sql>
+
+   <sql id="check">
+      and cDiv like '%'|| #{checkboxValues} ||'%'
+   </sql>
+</mapper>

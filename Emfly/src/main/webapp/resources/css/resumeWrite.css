@@ -1,0 +1,643 @@
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+html,body {
+    background: #e8ecef;
+}
+
+#menu1LayOut{
+    position: relative;
+   width: 1000px;
+   height: 1300px;
+    margin: 0 auto;
+}
+
+    .container {
+        /*10번째 줄 부트스트랩 컨테이너 스타일 수정*/
+        padding-left: 0px;
+    }
+    
+    .div-container {
+        /*바디 전체 틀*/
+        width: 902px;
+        margin: auto;
+    }
+    
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+    /*==인적사항 부분==*/
+
+    .selectbox{
+        height:62px;
+        width: 106px;
+        border:1px solid #ddd;
+        padding-left:10px;
+        cursor:pointer;
+    }
+
+
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        empty-cells: show;
+        border: 0 none;
+        border-top:1px solid rgb(206, 206, 206);
+        }
+        
+    .formWrap {
+        /*채워야할 박스 틀*/
+        position: relative;
+        width: 940px;
+    }
+    
+    .header {
+        /*인적사항 헤드*/
+        margin-bottom: 14px;
+        color: #333;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    label {
+        top: 9px;
+        font-size: 11px;
+        color: #a8a8a8;
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+    
+    .form {
+        position: relative;
+        width: 902px;
+        margin-bottom: 34px;
+        padding: 20px 20px 10px;
+        background-color: #fff;
+        border: 1px solid #dbe0e9;
+        box-sizing: border-box;
+    
+    }
+    
+    .row {
+        position: relative;
+        margin-bottom: 10px;
+        margin-left: 1px;
+    }
+    
+    
+    .input {
+        position: relative;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        width: 160px;
+        height: 62px;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        vertical-align: top;
+        text-align: left;
+        background-color: #fff;
+    }
+    
+    .input input {
+        display: block;
+        width: 100%;
+        padding: 0 15px;
+        border: 0;
+        color: #333;
+        outline: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        background-color: transparent;
+        font-size: 16px;
+    }
+    
+    .input.is-label.is-value input{
+        height: 20px;
+    }
+    
+    .formProfile .dropdown-profile-sex {
+        width: 115px;
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        width: 106px;
+        height: 62px;
+        margin-right: 10px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        vertical-align: top;
+        text-align: left;
+    }
+    
+    .dropdown.is-label div.label{
+        position: absolute;
+        left: 10px;
+        top: 9px;
+        color: #a8a8a8;
+        font-size: 11px;
+    }
+    
+    .dropdown.is-label.selected .buttonChoose span {
+        padding-top: 26px;
+    }
+    
+    .dropdown.selected .buttonChoose span {
+        color: #333;
+    }
+    
+    .dropdown .buttonChoose span {
+        overflow: hidden;
+        padding: 19px 15px 0;
+        color: #a8a8a8;
+        white-space: nowrap;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        font-size: 15px;
+        text-align: left;
+    }
+    
+    .dropdown .buttonChoose {
+        /*흰색바탕의 버튼 모양을 지금 모양처럼 바꾸는 css*/
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+    
+    
+    .button span {
+        display: block;
+        height: 100%;
+        text-align: left;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .dropdown .buttonChoose:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 27px;
+        width: 11px;
+        height: 6px;
+        background: url("/resources/images/ico/expand.PNG") no-repeat 0 -307px;
+    }
+    
+    /*이메일*/
+    .input-profile-email {
+        width: 275px;
+    }
+    
+    /*이메일 끝*/
+    
+    /*주소*/
+    .input-profile-addr {
+        width: 569px;
+    }
+    
+    .input .icon-search {
+        z-index: 20;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 22px;
+        width: 18px;
+        height: 17px;
+        background: url(/content/images/text_user/resume/write/sprite-icon.png) no-repeat 0 -419px;
+    }
+    
+    /*주소 끝*/
+    
+    /*사진 추가 */
+    .formProfile .picture.dropped {
+        border: 1px solid #ddd;
+        background: none;
+    }
+    
+    .formProfile .picture {
+        z-index: 200;
+        overflow: hidden;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 103px;
+        height: 134px;
+        /* background: url(/content/images/text_user/resume/write/bg-picture.png) no-repeat;
+        -webkit-box-sizing: border-box; */
+        box-sizing: border-box;
+    }
+    
+    .formProfile .picture .guide {
+        position: absolute;
+        left: 0;
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+    }
+    
+    .guide{
+        margin-top:-10px;
+    }
+
+    .guide img{
+        width:100%;
+        height: 100%;
+    }
+    
+    .formProfile .picture .guide:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        width: 16px;
+        height: 16px;
+        margin: 0 0 0 -8px;
+        background: url("resources/images/ico/plus.png") no-repeat 0 -367px;
+    }
+    
+    .formProfile .picture .buttonAddFile {
+        overflow: hidden;
+        z-index: 100;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 103px;
+        height: 134px;
+        opacity: 0;
+    }
+    
+    /*사진 추가 끝*/
+    
+    /*==인적사항 부분 끝==*/
+    
+    /*==학력 부분==*/
+   
+    
+    /*학교 구분*/
+    .dropdown .buttonChoose:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 27px;
+        width: 11px;
+        height: 6px;
+    }
+    
+    /*학교 구분 끝*/
+    /*학교명*/
+    .formEducation .input-education-name {
+        width: 250px;
+    }
+    
+    /*학교명 끝*/
+    
+    /*입학년월*/
+    .formEducation .input-education-startdate {
+        width: 106px;
+        margin-right: -1px;
+    }
+    
+    /*입학년월 끝*/
+    
+    /*졸업년월*/
+    .formEducation .input-education-enddate {
+        width: 106px;
+        margin-right: -1px;
+    }
+    
+    /*졸업년월 끝*/
+    
+    /*졸업상태*/
+    .label-selectbox {
+        width: 106px; /* 원하는 너비설정 */
+        height:62px;
+        background: url('../images/ico/expand.png') no-repeat 95% 50%; /* 네이티브 화살표를 커스텀 화살표로 대체 */
+        border: 1px solid #ddd;
+        padding-top: 15px;
+        padding-left: 15px;
+        cursor:pointer;
+        border-radius: 0px; /* iOS 둥근모서리 제거 */
+        -webkit-appearance: none; /* 네이티브 외형 감추기 */
+        -moz-appearance: none;
+        appearance: none;
+        }
+    .label{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        color: #a8a8a8;
+        font-size: 11px;
+    }
+    
+    /*졸업상태 끝*/
+    
+    /*전공명*/
+    
+    .formEducation .input-education-major-name {
+        width: 470px;
+    }
+    
+    /*전공명 끝*/
+    
+    /*==학력 부분 끝==*/
+    
+    
+    /*==경력 부분==*/
+    /*회사명*/
+    .formCareer .input-career-name {
+        width: 278px;
+        margin-right: 0;
+    }
+    
+    /*회사명 끝*/
+    
+    /*부서명*/
+    .formCareer .input-career-part {
+        width: 278px;
+    }
+    
+    /*부서명 끝*/
+    
+    /*입사일*/
+    .formCareer .input-career-joindate {
+        width: 113px;
+        margin-right: 0;
+    }
+    
+    /*입사일 끝*/
+    
+    /*퇴사일*/
+    .formCareer .input-career-leavedate {
+        width: 115px;
+        margin-left: -1px;
+    }
+    
+    /*퇴사일 끝*/
+    
+    /*재직중 버튼*/
+    
+    .formCareer .is-inoffice {
+        display: inline-block;
+        position: relative;
+        height: 62px;
+    }
+    
+    
+    /*재직중 버튼 끝*/
+    
+    /*직급*/
+    .rank {
+        width: 179px;
+        margin-right: 0px;
+    }
+    
+    /*직급 끝*/
+    
+    /*직무*/
+    .Duty {
+        width: 278px;
+        margin-right: 10px;
+    }
+    
+    /*직무 끝*/
+    
+    /*연봉*/
+    .formHopework .input-hopework-salary {
+        width: 214px;
+        padding-right: 60px;
+    }
+    
+    .unit {
+        position: absolute;
+        right: 14px;
+        top: 32px;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    /*연봉 끝*/
+    
+    /*담당업무*/
+    .textarea {
+        position: relative;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        width: 860px;
+        margin-right: 10px;
+        padding: 0px 0 0 1px;
+        border: 1px solid #ddd;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        vertical-align: top;
+        text-align: left;
+    }
+    
+    .textarea textarea {
+        display: block;
+        width: 100%;
+        height: 100px;
+        padding: 0 15px;
+        border: 1px solid #fff;
+        color: #333;
+        outline: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 16px;
+        resize: none;
+    }
+    
+    /*담당업무 끝*/
+    
+    /*==경력 부분 끝==*/
+    /*==희망근무조건 부분==*/
+    /*고용형태*/
+    .formHopework .dropdown-hopework-type {
+        width: 200px;
+        margin-right:11px;
+    }
+    
+    /*고용형태 끝*/
+    
+    /*희망연봉*/
+    .formHopework .input-hopework-salary {
+        width: 214px;
+        padding-right: 60px;
+    }
+    
+    /*희망연봉 끝*/
+    
+    /*==희망근무조건 부분==*/
+    
+    /*==제출 / 취소==*/
+    
+    #menu1button{
+        width:100px;
+        height:40px;
+        margin: 0 auto;
+        margin-top:20px;
+        background: rgb(33, 108, 179);
+        color:white;
+        padding-top:10px;
+        text-align: center;
+        display: inline-block;
+        margin-left:800px;
+        cursor: pointer;
+    }
+    
+    #menu1button:hover{
+        transition: all .3s ease-out;
+        background: rgb(11, 59, 104);
+    }
+
+    /* #menu2button{
+        width:100px;
+        height:40px;
+        margin: 0 auto;
+        margin-top:20px;
+        background: rgb(85, 85, 85);
+        color:white;
+        padding-top:10px;
+        text-align: center;
+        display: inline-block;
+        margin-left:5px;
+        cursor: pointer;
+    }
+    
+    #menu2button:hover{
+        transition: all .3s ease-out;
+        background: rgb(59, 59, 59);
+    } */
+
+    #selectbox{
+        width: 200px; /* 원하는 너비설정 */
+        height:62px;
+        background: url('../images/ico/expand.png') no-repeat 95% 50%; /* 네이티브 화살표를 커스텀 화살표로 대체 */
+        border: 1px solid #ddd;
+        padding-top: 15px;
+        padding-left: 15px;
+        cursor:pointer;
+        border-radius: 0px; /* iOS 둥근모서리 제거 */
+        -webkit-appearance: none; /* 네이티브 외형 감추기 */
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+
+    #image_preview{
+        height: 142px;
+    }
+
+    #labelImage1,#labelImage2{ 
+
+      font-family: 'Nanum Gothic', sans-serif;
+      display: inline-block; 
+      width:100px;
+      margin-top:5px;
+      padding: 5px; 
+      font-size: 15px;
+      color: rgb(255, 255, 255); 
+      line-height: normal; 
+      vertical-align: middle; 
+      background-color: #7aaefc; 
+      cursor: pointer;
+      font-weight: 500;
+      margin-left:759px;
+      text-align: center;
+      }
+
+    #labelImage1:hover,#labelImage2:hover{ 
+  
+      background-color: #0e3c92; 
+      transition: all 0.5s;
+ } 
+
+ #file_to_upload,#file_to_upload2 { /* 파일 필드 숨기기 */ 
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+
+    .radio {
+        
+        display: block;
+        cursor: pointer;
+      }
+      .radio input {
+        display: none;
+      }
+      .radio input + span {
+        line-height: 22px;
+        height: 22px;
+        padding-left: 22px;
+        display: block;
+        position: relative;
+        font-size:15px;
+        color: rgb(56, 56, 56);
+      }
+      .radio input + span:not(:empty) {
+        padding-left: 30px;
+      }
+      .radio input + span:before, .radio input + span:after {
+        content: '';
+        width: 22px;
+        height: 22px;
+        display: block;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        position: absolute;
+      }
+      .radio input + span:before {
+        background: #D1D7E3;
+        transition: background 0.2s ease, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+        transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+        transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2), -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+      }
+      .radio input + span:after {
+        background: #fff;
+        -webkit-transform: scale(0.78);
+                transform: scale(0.78);
+        transition: -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4), -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+      }
+      .radio input:checked + span:before {
+        -webkit-transform: scale(1.04);
+                transform: scale(1.04);
+        background: #5D9BFB;
+      }
+      .radio input:checked + span:after {
+        -webkit-transform: scale(0.4);
+                transform: scale(0.4);
+        transition: -webkit-transform .3s ease;
+        transition: transform .3s ease;
+        transition: transform .3s ease, -webkit-transform .3s ease;
+      }
+      .radio:hover input + span:before {
+        -webkit-transform: scale(0.92);
+                transform: scale(0.92);
+      }
+      .radio:hover input + span:after {
+        -webkit-transform: scale(0.74);
+                transform: scale(0.74);
+      }
+      .radio:hover input:checked + span:after {
+        -webkit-transform: scale(0.4);
+                transform: scale(0.4);
+      }

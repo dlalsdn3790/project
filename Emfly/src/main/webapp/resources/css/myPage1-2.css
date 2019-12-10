@@ -1,0 +1,574 @@
+html,body {
+    background: #F2F4F7;
+}
+
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+#menu1LayOut{
+    position: relative;
+	width: 1000px;
+	height: 1500px;
+    margin: 0 auto;
+
+}
+
+.view-page {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.div-container {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 75px;
+    text-align: left;
+    box-sizing: border-box;
+
+}
+
+/* 이력서 부분*/
+.subject {
+    margin-left:20px;
+    padding-top:20px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #000;
+    letter-spacing: -2px;
+    line-height: 1.4;
+    font-weight: 600;
+    text-align: left;
+}
+
+.subject2{
+    padding-top:20px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    letter-spacing: -2px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin:0 auto;
+    text-align: center;
+}
+
+#menu1button{
+    width:100px;
+    height:40px;
+    margin: 0 auto;
+    margin-top:20px;
+    background: rgb(33, 108, 179);
+    color:white;
+    padding-top:10px;
+    text-align: center;
+    display: inline-block;
+    margin-left:850px;
+    cursor: pointer;
+}
+
+#menu1button:hover{
+    transition: all .3s ease-out;
+    background: rgb(11, 59, 104);
+}
+
+.profile {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 33px;
+}
+
+
+.info-general {
+    padding-top: 15px;
+    margin-bottom: 13px;
+    font-size: 0;
+}
+
+.item-name,
+.item-gender,
+.item-year,
+.item-age {
+    display: inline-block;
+    font-size: 14px;
+    color: #888;
+    margin-left: 7px;
+    vertical-align: top;
+}
+
+#item-name {
+    margin-left: 0;
+    font-size: 20px;
+    color: #000;
+    display: inline-block;
+}
+
+.item {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    padding-left: 83px;
+    width: 235px;
+}
+
+.label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 68px;
+    font-size: 14px;
+    color: #888;
+}
+
+.label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 11px;
+    background-color: #ddd;
+    transform: translateY(6px);
+}
+
+.value {
+    font-size: 14px;
+    color: #000;
+    letter-spacing: 0;
+}
+
+a:visited {
+    color: #666;
+    text-decoration: none;
+}
+
+
+
+
+.header {
+    /*인적사항 헤드*/
+    margin-bottom: 14px;
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left:55px;
+}
+
+.description {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #000;
+    line-height: 1.6;
+}
+
+.option {
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #39f;
+}
+
+.s2-header {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+}
+
+
+
+/* 이력서 부분 끝 */
+
+/* 학력 부분 */
+
+
+.list {
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid #000;
+    background-color: #fff;
+}
+
+.item3 {
+    padding-top: 21px;
+    padding-bottom: 17px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 200px;
+    padding-right: 40px;
+    border-top: 1px solid #edeef0;
+}
+
+.date {
+    position: absolute;
+    left: 38px;
+    top: 22px;
+    font-size: 14px;
+    color: #000;
+    letter-spacing: 0;
+}
+
+.term {
+    margin-bottom: 7px;
+    color: #000;
+}
+
+.state {
+    color: #3399ff;
+    letter-spacing: -1px;
+}
+
+.content-header {
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.name {
+    position: relative;
+    top: -3px;
+    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    vertical-align: top;
+    word-break: break-all;
+}
+
+.line {
+    display: inline;
+    margin-left: 11px;
+    font-size: 14px;
+    color: #666;
+}
+
+.score {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+}
+/* 학력 부분 끝 */
+
+/* 희망 근무 조건 부분 */
+.hopework {
+    overflow: hidden;
+position: relative;
+margin-bottom: 33px;
+
+}
+
+.table {
+width: 100%;
+background-color: #fff;
+border-top:1px solid black;
+}
+
+table{
+border-collapse: collapse;
+border-spacing: 0;
+empty-cells: show;
+border: 0 none;
+border-top:1px solid black;
+}
+
+.hopework th {
+width: 149px;
+}
+
+.table th {
+text-align: center;
+background-color: #fcfcfc;
+border-left: 1px solid #edeef0;
+border-right: 1px solid #edeef0;
+border-bottom: 1px solid #edeef0;
+font-size: 12px;
+color: #000;
+vertical-align: middle;
+}
+
+.table th:first-child{
+    border-top: 1px solid black;
+}
+
+
+.table td {
+padding: 0 18px;
+border-bottom: 1px solid #edeef0;
+font-size: 14px;
+color: #000;
+text-align: left;
+vertical-align: middle;
+}
+.list-hopework{
+list-style:none;
+}
+
+#boardLine{
+    background:rgb(33, 108, 179);
+    width:1000px;
+    height:5px;
+    margin-bottom: 5px;
+}
+
+#myTab{
+    width:1000px;
+    height: 50px;
+    background: rgb(235, 235, 235);
+    border-bottom:1px solid rgb(207, 207, 207);
+}
+
+.tabList{
+    width: 240px;
+    height:50px;
+    display: inline-block;
+    padding-top:10px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+#tab1{
+    color: rgb(33, 108, 179);
+}
+
+#tab2:hover,#tab3:hover,#tab4:hover{
+    color: rgb(33, 108, 179);
+    transition:600ms ease all;
+}
+
+#TabContent1{
+    width:1000px;
+    height:1350px;
+    background: white;
+}
+
+
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+
+    .container {
+        /*10번째 줄 부트스트랩 컨테이너 스타일 수정*/
+        padding-left: 0px;
+    }
+    
+    .div-container {
+        /*바디 전체 틀*/
+        width: 902px;
+        margin: auto;
+    }
+    
+    .header {
+        margin-top:40px;
+        margin-bottom: 13px;
+        font-size: 22px;
+        color: #000;
+    }
+    
+    /* 이력서 부분*/
+
+    
+    .profile {
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 33px;
+    }
+    
+    .container {
+        overflow: hidden;
+        position: relative;
+        width: 950px;
+        padding: 0 0 20px 40px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border-top:1px solid black;
+    }
+    
+    .info-general {
+        padding-top: 15px;
+        margin-bottom: 13px;
+        font-size: 0;
+    }
+    
+    .item-name,
+    .item-gender,
+    .item-year,
+    .item-age {
+        display: inline-block;
+        font-size: 14px;
+        color: #888;
+        margin-left: 7px;
+        vertical-align: top;
+    }
+    
+    #item-name {
+        margin-left: 0;
+        font-size: 20px;
+        color: #000;
+        display: inline-block;
+    }
+    
+    .item {
+        position: relative;
+        display: inline-block;
+        width: 300px;
+        padding-left: 83px;
+        width: 235px;
+    }
+    
+    .label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 68px;
+        font-size: 14px;
+        color: #888;
+    }
+    
+    .label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+        height: 11px;
+        background-color: #ddd;
+        transform: translateY(6px);
+    }
+    
+    .value {
+        font-size: 14px;
+        color: #000;
+        letter-spacing: 0;
+    }
+    
+    a:visited {
+        color: #666;
+        text-decoration: none;
+    }
+    
+    .summary {
+        position: relative;
+        overflow: hidden;
+        height: 150px;
+        width: 950px;
+        background-color: #fff;
+        border-top:1px solid black;
+        margin:0 auto;
+    }
+    
+    .item2 {
+        float: left;
+        position: relative;
+        height: 150px;
+        padding: 27px 15px 0;
+        vertical-align: top;
+        text-align: center;
+        width: 300px;
+    }
+    
+    .s-header {
+        margin-bottom: 7px;
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+        font-weight: 600;
+    }
+    
+
+    
+    .option {
+        margin-bottom: 5px;
+        font-size: 13px;
+        color: #39f;
+    }
+    
+    .s2-header {
+        margin-bottom: 25px;
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .summary .item2:nth-child(1){
+        margin-left:20px;
+    }
+    
+    .summary .item2:nth-child(2):after,.summary .item2:nth-child(3):after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 1px;
+        height: 89px;
+        background-color: #edeef0;
+        transform: translateY(-50%);
+    }
+
+    
+    /* 이력서 부분 끝 */
+    
+    /* 학력 부분 */
+    
+    
+    /* 학력 부분 끝 */
+    
+    /* 희망 근무 조건 부분 */
+    .hopework {
+        overflow: hidden;
+    position: relative;
+    margin-bottom: 33px;
+    }
+    
+    .table {
+    width: 950px;
+    margin:0 auto;
+    background-color: #fff;
+    }
+    
+    table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 0 none;
+    }
+    
+    .hopework th {
+    width: 149px;
+    }
+    
+    .table th {
+    text-align: center;
+    background-color: #fcfcfc;
+
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    }
+
+    .table tr:nth-child(1) td{
+        border-top:1px solid black;
+    }
+    
+    .table td {
+    padding: 0 18px;
+
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+    vertical-align: middle;
+    }
+
+    
+    .td-label{
+        height:22px;
+    }
+    

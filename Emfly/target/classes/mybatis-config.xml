@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- XML 문서의 유효성 체크를 위해 필요한 부분 -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+   
+   <typeAliases>
+      <typeAlias type="com.kh.emfly.member.model.vo.Member" alias="Member" />
+      <typeAlias type="com.kh.emfly.company.model.vo.Company" alias="Company" />
+      <typeAlias type="com.kh.emfly.qna.model.vo.Question" alias="Question" />
+      <typeAlias type="com.kh.emfly.qna.model.vo.Answer" alias="Answer" />
+      
+      <typeAlias type="com.kh.emfly.resume.model.vo.Resume" alias="Resume" />
+      <typeAlias type="com.kh.emfly.enter.model.vo.Enter" alias="Enter" />
+      <typeAlias type="com.kh.emfly.company.model.vo.Hire"
+         alias="Hire" />
+      <typeAlias type="com.kh.emfly.company.model.vo.THire"
+         alias="THire" />
+         <typeAlias type="com.kh.emfly.interview.model.vo.techQ" alias="techQ"/>
+           <typeAlias type="com.kh.emfly.board.model.vo.Board" alias="Board" />
+      <typeAlias type="com.kh.emfly.board.model.vo.Reply" alias="Reply" />
+   </typeAliases>
+   
+   <mappers>
+      <mapper resource="mappers/member-mapper.xml" />
+      <mapper resource="mappers/company-mapper.xml" />
+      <mapper resource="mappers/question-mapper.xml" />
+      <mapper resource="mappers/answer-mapper.xml" />
+      <mapper resource="mappers/resume-mapper.xml" />
+      <mapper resource="mappers/enter-mapper.xml" />
+      <mapper resource= "mappers/techQ-mapper.xml"/>
+      <mapper resource="mappers/board-mapper.xml" />
+      <mapper resource="mappers/reply-mapper.xml" /> 
+   </mappers>
+   
+</configuration>

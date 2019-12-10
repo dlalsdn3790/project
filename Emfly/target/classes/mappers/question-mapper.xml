@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- XML 문서의 유효성 체크를 위해 필요한 부분 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Question">
+	<!-- 여기 오면 일단 결과를 돌려받을 resultMap부터 생성 -->
+	<resultMap id="QuestionResultSet" type="Question">
+		<id column="QID" property="qId" />
+		<result column="QNAME" property="qName" />
+		<result column="QANSWER" property="qAnswer" />
+	</resultMap>
+
+	<select id="listAll" resultMap="QuestionResultSet">
+	<![CDATA[
+		select * from(
+    	select * from QUESTION
+    	order by DBMS_RANDOM.RANDOM 
+		) where rownum < 4
+	]]>
+	</select>
+</mapper>  

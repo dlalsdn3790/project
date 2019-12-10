@@ -1,0 +1,105 @@
+* {
+   font-family: 'Nanum Gothic', sans-serif;
+}
+
+html, body {
+   background: url(../resources/images/Background.png);
+}
+
+#menu1LayOut {
+   position: relative;
+   width: 1000px;
+   height: 900px;
+   margin: 0 auto;
+   text-align: center;
+   background: white;
+}
+
+a {
+   text-decoration-line: none;
+}
+
+section {
+   width: 100%;
+   height: 850px;
+   padding-top: 100px;
+   /* background-color: gray; */
+}
+
+#loginLogo {
+   text-align: center;
+   margin-left: 60px;
+   margin-bottom: 5px;
+}
+
+button {
+   margin: 0;
+   padding: 0;
+}
+
+.login-box {
+   width: 400px;
+   padding: 30px 40px 30px 40px;
+   margin: 0 auto;
+   margin-top: 30px;
+   background-color: rgba(22, 22, 22, 0.9);
+   position: relative;
+   color: white;
+}
+
+.login-button {
+   width: 100%;
+   height: 70px;
+   display: block;
+   color: #fff;
+   font-weight: 500;
+   font-size: 18px;
+   text-align: center;
+}
+
+.account-box>p {
+   text-align: center;
+   margin-bottom: 30px;
+   /* margin: 0 auto; */
+}
+
+p {
+   margin-top: 10px;
+}
+
+#naver {
+   margin-top: 20px;
+   cursor: pointer;
+}
+
+#naver img {
+   width: 100%;
+   height: 100%;
+}
+
+#facebook {
+   margin-top: 10px;
+   cursor: pointer;
+}
+
+#facebook img {
+   width: 100%;
+   height: 100%;
+}
+
+#google {
+   margin-top: 10px;
+   cursor: pointer;
+}
+
+#google img {
+   width: 100%;
+   height: 100%;
+}
+
+.agree {
+   position: relative;
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 20px;
+}

@@ -1,0 +1,175 @@
+		.jsCalendar * {
+			margin: 0;
+			padding: 0;
+			
+		}
+		.jsCalendar table,
+		.jsCalendar table th,
+		.jsCalendar table td {
+			border: 0;
+			box-sizing: content-box;
+		}
+	/* Blue default */
+		.jsCalendar table {
+			background-color: #FFFFFF;
+			border-collapse: collapse;
+			border-radius: 4px;
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+			color: #000000;
+			font-family: Tahoma, Geneva, sans-serif;
+			margin: 5px;
+		}
+		.jsCalendar tr {
+			line-height: 0;
+		}
+		.jsCalendar thead .jsCalendar-title {
+			height: 40px;
+			line-height: 40px;
+		}
+		.jsCalendar thead .jsCalendar-title-left {
+			float: left;
+		}
+		.jsCalendar thead .jsCalendar-title-right {
+			float: right;
+		}
+		.jsCalendar thead .jsCalendar-nav-left,
+		.jsCalendar thead .jsCalendar-nav-right {
+			border-radius: 10px;
+			color: #999999;
+			cursor: pointer;
+			font-family: "Courier New", Courier, monospace;
+			font-size: 12px;
+			font-weight: bold;
+			height: 20px;
+			line-height: 20px;
+			margin: 10px 8px;
+			text-align: center;
+			transition: color 0.2s, background-color 0.2s;
+			width: 20px;
+		}
+		.jsCalendar thead .jsCalendar-nav-left:hover,
+		.jsCalendar thead .jsCalendar-nav-right:hover {
+			background-color: #E2E2E2;
+			color: #000000;
+		}
+		.jsCalendar thead .jsCalendar-nav-left {
+			float: left;
+		}
+		.jsCalendar thead .jsCalendar-nav-right {
+			float: right;
+		}
+		.jsCalendar thead .jsCalendar-title-name {
+			cursor: default;
+			float: left;
+			font-size: 18px;
+			font-weight: lighter;
+			padding: 0 20px;
+		}
+		.jsCalendar thead .jsCalendar-nav-left:after {
+			content: "<";
+		}
+		.jsCalendar thead .jsCalendar-nav-right:after {
+			content: ">";
+		}
+		.jsCalendar thead .jsCalendar-week-days th {
+			text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+		}
+		.jsCalendar thead .jsCalendar-week-days th,
+		.jsCalendar tbody td {
+			border-radius: 18px;
+			cursor: default;
+			display: inline-block;
+			font-size: 12px;
+			font-weight: lighter;
+			height: 45px;
+			line-height: 45px;
+			margin: 1px 2px;
+			text-align: center;
+			transition: color 0.1s, background-color 0.2s;
+			width: 45px;
+		}
+		.jsCalendar tbody td:hover {
+			background-color: #E6E6E6;
+		}
+		.jsCalendar tbody td.jsCalendar-selected {
+			background-color: #FFFFFF;
+			border: 2px solid #E6E6E6;
+			height: 40px;
+			line-height: 40px;
+			width: 40px;
+		}
+		.jsCalendar tbody td.jsCalendar-current {
+			background-color: #63b4be;
+			border-radius: 18px;
+			color: #FFFFFF;
+		}
+		.jsCalendar tbody td.jsCalendar-previous,
+		.jsCalendar tbody td.jsCalendar-next {
+			color: #CACACA;
+		}
+		.jsCalendar tbody td.jsCalendar-previous:hover,
+		.jsCalendar tbody td.jsCalendar-next:hover {
+			color: #FFFFFF;
+		}
+
+		.jsCalendar thead {
+			display: block;
+			margin: 4px 4px 0 4px;
+		}
+		.jsCalendar tbody {
+			display: block;
+			margin: 0 4px 4px 4px;
+		}
+
+
+
+/* Material Theme */
+	/* Blue default */
+		.jsCalendar.material-theme table {
+			border-radius: 0;
+			
+		}
+		.jsCalendar.material-theme thead {
+			background-color: rgb(41, 110, 201);
+			color: #FFFFFF;
+			margin: 0;
+			padding: 4px 4px 0 4px;
+		}
+		.jsCalendar.material-theme thead .jsCalendar-title {
+			display: block;
+			position: relative;
+		}
+		.jsCalendar.material-theme thead .jsCalendar-title-name {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+			color: #FFFFFF;
+			font-size: 16px;
+			left: 15px;
+			position: absolute;
+			right: 15px;
+			text-align: center;
+		}
+		.jsCalendar.material-theme thead .jsCalendar-title-left,
+		.jsCalendar.material-theme thead .jsCalendar-title-right {
+			position: absolute;
+			z-index: 1;
+		}
+		.jsCalendar.material-theme thead .jsCalendar-nav-left,
+		.jsCalendar.material-theme thead .jsCalendar-nav-right {
+			color: #FFFFFF;
+		}
+		.jsCalendar.material-theme thead .jsCalendar-nav-left:hover,
+		.jsCalendar.material-theme thead .jsCalendar-nav-right:hover {
+			background-color: rgb(168, 230, 241);
+		}
+		.jsCalendar.material-theme thead .jsCalendar-title-right {
+			right: 0;
+		}
+		.jsCalendar.material-theme thead .jsCalendar-week-days th {
+			font-size: 14px;
+			text-shadow: none;
+		}
+
+
+
+
+		

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- XML 문서의 유효성 체크를 위해 필요한 부분 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ResumeMapper">
+	<!-- 여기 오면 일단 결과를 돌려받을 resultMap부터 생성 -->
+	<resultMap id="ResumeResultSet" type="Resume">
+		<id column="REID" property="reId" />
+		<result column="RNAME" property="rName" />
+		<result column="REBIRTH" property="reBirth" />
+		<result column="REGENDER" property="reGender" />
+		<result column="REEMAIL" property="reEmail" />
+		<result column="REPHONE" property="rePhone" />
+		<result column="READDRESS" property="reAddress" />
+		<result column="RESCHOOL" property="reSchool" />
+		<result column="RESCNAME" property="reScname" />
+		<result column="RESDATE" property="reSdate" />
+		<result column="REEDATE" property="reEdate" />
+		<result column="REGRADUATE" property="reGraduate" />
+		<result column="REMAJOR" property="reMajor" />
+		<result column="REGPOINT" property="reGpoint" />
+		<result column="RETPOINT" property="reTpoint" />
+		<result column="RECOMNAME" property="reComName" />
+		<result column="REDIVNAME" property="reDivName" />
+		<result column="RERANK" property="reRank" />
+		<result column="REYEAR" property="reYear" />
+		<result column="REWORKINFO" property="reWorkInfo" />
+		<result column="REEMPLOY" property="reEmploy" />
+		<result column="REEMDIV" property="reEmDiv" />
+		<result column="RELOCATION" property="reLocation" />
+		<result column="RESALARY" property="reSalary" />
+		<result column="RESTATUS" property="reStatus" />
+		<result column="REDATE" property="reDate" />
+	</resultMap>
+	
+	<insert id="resumeInsert" parameterType="Resume">
+ 		insert into resume
+ 		values(reId.nextval,#{rName},#{reBirth},#{reGender},#{reEmail},#{rePhone},#{reAddress},
+ 		#{reSchool},#{reScname},#{reSdate},#{reEdate},#{reGraduate},#{reMajor},#{reGpoint},#{reTpoint},
+ 		#{reComName},#{reDivName},#{reRank},#{reYear},#{reWorkInfo},#{reEmploy},#{reEmDiv},#{reLocation},#{reSalary},#{reStatus},#{reDate})
+ 	</insert>
+ 	
+ 	<select id="listResume" parameterType="hashMap"
+      resultMap="ResumeResultSet">
+      SELECT * FROM RESUME
+
+      <where>
+         <if test="reYear.size != 0">
+            <foreach collection="reYear" item="reYear" open="("
+               separator=" OR " close=")">
+            
+               <if test="reYear == 0">
+                  reyear is null
+               </if>
+
+               <if test="reYear == 5">
+                  reyear in('1년','2년','3년','4년','5년')
+               </if>
+
+               <if test="reYear == 10">
+                  reyear in('6년','7년','8년','9년','10년')
+               </if>
+
+               <if test="reYear == 15">
+                  reyear in('11년','12년','13년','14년','15년')
+               </if>
+               
+                 <if test="reYear == 99">
+                 reyear in('16년','17년','18년','19년','20년')
+               </if>
+            </foreach>
+         </if>
+         
+         <if test="reGender.size != 0">
+            AND
+            <foreach collection="reGender" item="reGender" open="("
+               separator=" OR " close=")">
+              
+               <if test="reGender == 400">
+                  regender = 'M'
+               </if>
+
+               <if test="reGender == 500">
+                  regender = 'F'
+               </if>
+            </foreach>
+         </if>
+         
+         <if test="reBirth.size != 0">
+            AND
+            <foreach collection="reBirth" item="reBirth" open="("
+               separator=" OR " close=")">
+              
+               <if test="reBirth == 29">
+              	 SUBSTR(rebirth,1,4) IN('1991','1992','1993','1994','1995','1996','1997','1998','1999','2000')
+               </if>
+
+              <if test="reBirth == 39">
+              	 SUBSTR(rebirth,1,4) IN('1981','1982','1983','1984','1985','1986','1987','1988','1989','1990')  
+               </if>
+               
+                <if test="reBirth == 49">
+              	  SUBSTR(rebirth,1,4) IN('1971','1972','1973','1974','1975','1976','1977','1978','1979','1980')  
+               </if>
+               
+                <if test="reBirth == 50"> 
+              	 SUBSTR(rebirth,1,4) IN('1961','1962','1963','1964','1965','1966','1967','1968','1969','1970')    
+               </if>
+        	 </foreach>
+         </if>
+                  
+         <if test="reSchool.size != 0">
+            AND
+            <foreach collection="reSchool" item="reSchool" open="("
+               separator=" OR " close=")">
+              
+               <if test="reSchool == 44">
+                  reSchool = '(4년제)'
+               </if>
+
+               <if test="reSchool == 23">
+                  reSchool = '(2,3년제)'
+               </if>
+               
+                <if test="reSchool == 56">
+                  reSchool = '(석사)' or reSchool = '(박사)'
+               </if>
+               
+                <if test="reSchool == 11">
+                  reSchool = '(고졸이하)'
+               </if>
+            </foreach>
+         </if>
+         
+         <if test="reLocation.size != 0">
+            AND
+            <foreach collection="reLocation" item="reLocation" open="("
+               separator=" OR " close=")">
+               RELOCATION LIKE '%'|| #{reLocation} ||'%'
+            </foreach>
+         </if>
+         
+         <if test="reEmdiv.size != 0">
+            AND
+            <foreach collection="reEmdiv" item="reEmdiv" open="("
+               separator=" OR " close=")">
+               reEmdiv = #{reEmdiv}
+            </foreach>
+         </if>
+         
+         <if test="reEmploy.size != 0">
+            AND
+            <foreach collection="reEmploy" item="reEmploy" open="("
+               separator=" OR " close=")">
+               reEmploy = #{reEmploy}
+            </foreach>
+         </if>
+         
+          <if test="reSalary.size != 0">
+            AND
+            <foreach collection="reSalary" item="reSalary" open="("
+               separator=" OR " close=")">
+               <if test="reSalary == 2500">
+                  <![CDATA[
+                  RESALARY <= 2500
+                  ]]>
+               </if>
+
+               <if test="reSalary == 3000">
+                 RESALARY between 2501 and 3000
+               </if>
+
+               <if test="reSalary == 3500">
+                  RESALARY between 3001 and 3500
+               </if>
+
+               <if test="reSalary == 4000">
+                  RESALARY between 3501 and 4000
+               </if>
+
+               <if test="reSalary == 4500">
+                  RESALARY between 4001 and 4500
+               </if>
+
+               <if test="reSalary == 9999">
+                  <![CDATA[
+                  RESALARY > 4500
+                  ]]>
+               </if>
+            </foreach>
+         </if>
+         
+          
+
+          
+      </where>
+
+      ORDER BY REID
+   </select>
+
+	<select id="getListCount" resultType="_int">
+ 		select count(*)
+ 		from resume
+ 	</select>
+ 	
+ 	<select id="selectResume" resultMap="ResumeResultSet">
+      select * from resume where
+      reId = #{reId}
+   </select>
+ 	
+ 	<sql id="pagingHeader">
+ 		 select *
+        from (
+            select rownum as rn, A.*
+            from ( 
+ 	</sql>
+ 	
+ 	<sql id="pagingFooter">
+ 		     ) A
+        ) where rn between #{start} and #{end}
+ 	</sql>
+ 	
+ 	<sql id="check">
+ 		
+ 	</sql>
+</mapper>  

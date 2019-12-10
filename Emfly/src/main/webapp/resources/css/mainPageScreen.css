@@ -1,0 +1,420 @@
+* {
+   font-family: 'Nanum Gothic', sans-serif;
+}
+
+#div1LayOut {
+   position: relative;
+   font-family: 'Montserrat', sans-serif;
+   width: 100%;
+   height: 340px;
+   margin: 0 auto;
+   background: rgb(245, 245, 245);
+   background: url(../images/backImage.jpg) no-repeat center center/cover;
+   border-bottom: 1px solid rgb(226, 226, 226);
+   background-attachment: fixed;
+}
+
+#div1LayOut:after {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(176, 249, 253, 0.9);
+   background: -webkit-linear-gradient(bottom, rgba(163, 224, 223, 0.9),
+      rgba(173, 218, 255, 0.9));
+   border-bottom: 1px solid rgb(125, 151, 235);
+   margin: 0 auto;
+}
+
+#bannerScreen {
+   width: 1000px;
+   height: 320px;
+   margin: 0 auto;
+   position: relative;
+   z-index: 5;
+}
+
+#padding-content {
+   margin: 0 auto;
+   text-align: center;
+   font-family: 'Nanum Gothic', sans-serif;
+}
+
+#div2LayOut {
+   position: relative;
+   font-family: 'Montserrat', sans-serif;
+   width: 1000px;
+   height: 200px;
+   margin: 0 auto;
+   padding-left: 10px;
+}
+
+#div3LayOut {
+   width: 1000px;
+   height: 450px;
+   margin: 0 auto;
+   padding-left: 20px;
+}
+
+.menu {
+   width: 180px;
+   height: 155px;
+   background: white;
+   margin-left: 10px;
+   margin-top: 10px;
+   border: 1px solid rgb(223, 223, 223);
+   display: inline-block;
+   box-shadow: 2px 1px rgb(223, 223, 223);
+}
+
+.menu:nth-child(1) {
+   border-bottom: 3px solid #df7026;
+}
+
+.menu:nth-child(2) {
+   border-bottom: 3px solid #e9931a;
+}
+
+.menu:nth-child(3) {
+   border-bottom: 3px solid #1691be;
+}
+
+.menu:nth-child(4) {
+   border-bottom: 3px solid #166ba2;
+}
+
+.menu:nth-child(5) {
+   border-bottom: 3px solid #244559;
+}
+
+.menu:nth-child(6) {
+   border-bottom: 3px solid #152836;
+}
+
+.menuImage {
+   overflow: hidden;
+}
+
+.menu:hover {
+   margin-top: 0px;
+   transition: 600ms ease all;
+   border-bottom: 3px solid rgb(202, 71, 115);
+}
+
+.menu img {
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   transition: all 0.3s;
+   display: block;
+   transform: scale(1);
+}
+
+.menu img:hover {
+   transform: scale(1.15);
+   -o-transform: scale(1.15);
+   -moz-transform: scale(1.15);
+   -webkit-transform: scale(1.15);
+}
+
+.menuImage {
+   height: 110px;
+}
+
+.menuText {
+   text-align: center;
+   font-family: 'Nanum Gothic', sans-serif;
+   margin-top: 10px;
+   font-size: 14px;
+   font-weight: 600;
+}
+
+.nino-sectionHeading {
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 1;
+   position: relative;
+   text-align: center;
+   color: #333;
+   padding-bottom: 10px;
+}
+
+.nino-sectionHeading:after {
+   content: "";
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   width: 50px;
+   height: 2px;
+   background: rgb(202, 71, 115);
+   transform: translateX(-50%);
+}
+
+#dateInfo {
+   width: 550px;
+   height: 360px;
+   background: rgb(255, 255, 255);
+   text-align: right;
+   margin-right: 10px;
+   box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+   display: inline-block;
+}
+
+#dateTitle {
+   width: 100%;
+   height: 28px;
+   background: #294e79;
+   text-align: center;
+   font-size: 15px;
+   font-weight: 500;
+   padding-top: 7px;
+   color: rgb(255, 255, 255);
+   border-bottom: 1px solid rgb(182, 182, 182);
+}
+
+#dateContent {
+   width: 100%;
+   height: 332px;
+   overflow: auto;
+}
+
+ol {
+   counter-reset: li;
+   list-style: none;
+   font: 15px 'trebuchet MS', 'lucida sans';
+   padding: 0;
+   margin-bottom: 4em;
+}
+
+ol ol {
+   margin: 0 0 0 0;
+}
+
+.rectangle-list li {
+   text-align: left;
+   color: white;
+   width: 520px;
+}
+
+.rectangle-list a {
+   position: relative;
+   display: block;
+   padding: .4em .4em .4em .8em;
+   margin: .5em .2em .5em 3.5em;
+   background: rgb(250, 250, 250);
+   color: rgb(31, 31, 31);
+   text-decoration: none;
+   -webkit-transition: all .3s ease-out;
+   -moz-transition: all .3s ease-out;
+   -ms-transition: all .3s ease-out;
+   -o-transition: all .3s ease-out;
+   transition: all .3s ease-out;
+   border-bottom: 1px solid rgb(211, 211, 211);
+   font-weight: 600;
+}
+
+.rectangle-list a:hover {
+   background: rgb(80, 80, 80);
+   color: white;
+}
+
+.rectangle-list a:before {
+   content: counter(li);
+   counter-increment: li;
+   position: absolute;
+   left: -2.5em;
+   top: 50%;
+   margin-top: -1em;
+   background: rgb(41, 110, 201);
+   color: white;
+   height: 2em;
+   width: 2em;
+   line-height: 2em;
+   text-align: center;
+   font-weight: bold;
+}
+
+.rectangle-list a:after {
+   position: absolute;
+   content: '';
+   border: .5em solid transparent;
+   left: -1em;
+   top: 50%;
+   margin-top: -.5em;
+   -webkit-transition: all .3s ease-out;
+   -moz-transition: all .3s ease-out;
+   -ms-transition: all .3s ease-out;
+   -o-transition: all .3s ease-out;
+   transition: all .3s ease-out;
+}
+
+.rectangle-list a:hover:after {
+   left: -.5em;
+   border-left-color: rgb(41, 110, 201);
+}
+/** 2번째 달력 css */
+.flex-contatiner {
+   width: 100%;
+   height: 100%;
+   display: inline-block;
+   justify-content: center;
+   align-items: center;
+}
+
+.calendar-container {
+   position: relative;
+   width: 360px;
+   height: 360px;
+   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 30px 77px 0
+      rgba(0, 0, 0, 0.22);
+   overflow: visible;
+}
+
+.image-container {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+}
+
+.image {
+   width: 100%;
+   height: 100%;
+   background-image: url("../images/calendarImage.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+}
+
+.calendar {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   margin-top: 10%;
+   margin-left: 5%;
+   padding-top: 5%;
+   border: 10px solid #fff;
+   font-family: 'Josefin Sans', sans-serif;
+}
+
+.calendar .month-title {
+   font-family: 'Josefin Sans', sans-serif;
+   position: absolute;
+   top: -60px;
+   left: -20px;
+   margin: 0;
+   font-size: 120px;
+   line-height: 1;
+   letter-spacing: 0;
+   color: rgb(255, 255, 255);
+   opacity: 0.3;
+}
+
+.calendar .calendar-table {
+   position: absolute;
+   width: 100%;
+   height: 85%;
+   border-collapse: collapse;
+   color: #fff;
+}
+
+.calendar .calendar-table th, .calendar .calendar-table td {
+   text-align: center;
+   font-size: 16px;
+}
+
+.calendar .calendar-table td {
+   cursor: pointer;
+   transition: opacity 0.3s ease;
+}
+
+.calendar .calendar-table td:not (.is-today ) {
+   opacity: 0.5;
+}
+
+.calendar .calendar-table td:hover {
+   opacity: 1;
+}
+
+.calendar .is-today {
+   opacity: 1;
+   width: 40px;
+   height: 40px;
+   background-color: #fff;
+   color: #7c3ee0;
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+   background-color: #F5F5F5;
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+
+::-webkit-scrollbar-track {
+   width: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color: #F5F5F5;
+   border-radius: 10px;
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+   width: 10px;
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color: #555;
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+
+.menu a:hover {
+   color: rgb(202, 71, 115);
+   transition: 600ms ease all;
+}
+
+.hirespan_end {
+   float: right;
+   position: relative;
+   margin-top:-2px;
+   color: white;
+   display:inline-block;
+   background:#B40431;
+   padding:3px;
+   font-weight:500;
+   font-size:14px;
+   width:80px;
+   text-align:center;
+}
+
+.hirespan_ing {
+   float: right;
+   position: relative;
+   margin-top:-2px;
+   color: white;
+   display:inline-block;
+   background:#08298A;
+   padding:3px;
+   font-weight:500;
+   font-size:14px;
+   width:80px;
+   text-align:center;
+}
+
+.hirespan_every {
+	float: right;
+   position: relative;
+   margin-top:-2px;
+   color: white;
+   display:inline-block;
+   background:#2E2E2E;
+   padding:3px;
+   font-weight:500;
+   font-size:14px;
+   width:80px;
+   text-align:center;
+}

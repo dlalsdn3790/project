@@ -1,0 +1,274 @@
+html,body {
+    background: #F2F4F7;
+}
+
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+#menu1LayOut{
+    position: relative;
+   width: 1000px;
+   height: 1100px;
+    margin: 0 auto;
+    
+}
+
+body {
+    background: #F2F4F7;
+}
+
+.content-header {
+    width: 100%;
+    height: 80px;
+    display: inline-block;
+    text-align: left;
+    margin-top: 40px;
+    padding: 0 15px;
+    border-bottom: 5px solid rgb(33, 108, 179);
+}
+
+.content-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 53px;
+    color: #444;
+    display: inline-block;
+    /* float: left; */
+    min-width: 140px;
+       
+}
+
+
+.div-container {
+    width: 1000px;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid black;
+    background: white;
+}
+
+.board-title {
+    border-bottom: 1px dashed rgba(0, 0, 0, .5);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    background:white;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: bold;
+    float: left;
+}
+
+.write-info {
+    float: right;
+    padding-right: 20px;
+}
+
+span {
+    padding-left: 10px;
+}
+
+
+.board-content {
+    padding: 20px;
+    height: 500px;
+    background: white;
+    /* 댓글 작성 */
+}
+
+.commentWrite {
+    width: 100%;
+    height: 46px;
+    /* margin: 2px 0 100px; */
+    background-color: #f6f6f6;    
+}
+
+.comment-content {
+    width: 905px;
+    outline: 0;
+    border: none;
+    background-color: #fff;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+#menu1button{
+    width:80px;
+    height:30px;
+    margin: 0 auto;
+    margin-top:5px;
+    margin-left:10px;
+    background: rgb(33, 108, 179);
+    color:white;
+    padding-top:5px;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+}
+
+#menu1button:hover{
+    transition: all .3s ease-out;
+    background: rgb(11, 59, 104);
+}
+
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+/* 댓글 작성 끝*/
+
+/* 댓글 리스트*/
+
+#comment-title{
+    width: 100%;
+    height:40px;
+    background-color: #ffffff;
+    padding-top:10px;
+    padding-left:20px;
+    font-size:16px;
+    font-weight: 700;
+    border-top: 2px solid rgb(33, 108, 179);
+    border-bottom: 1px solid rgb(33, 108, 179);
+}
+
+.comment-container {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.comment-list {
+    width: 100%;
+    display: inline-block;
+    padding: 5px 19px;
+}
+
+.comment-list2 {
+    width: 100%;
+    display: inline-block;
+    padding: 5px 19px;
+    border-bottom: 1px dashed rgba(0, 0, 0, .5);
+}
+
+#menu2button{
+    width:80px;
+    height:30px;
+    margin: 0 auto;
+    margin-top:5px;
+    margin-left:103px;
+    background: rgb(33, 108, 179);
+    color:white;
+    padding-top:5px;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+}
+
+#menu2button:hover{
+    transition: all .3s ease-out;
+    background: rgb(11, 59, 104);
+}
+
+
+.writer {
+
+    float: left;
+    width: 10%;
+    margin-right: 10px;
+}
+
+.comment-id {
+    width: 300px;
+    color: #444;
+    float: left;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.comment {
+    float: right;
+    margin-right: 3px;
+}
+
+.pointer {
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #d6d6d6;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+
+.count{
+    margin-left:5px;
+}
+
+.comment-content2{
+    width:770px;
+    display: inline-block;
+}
+
+#menu3button{
+    width:80px;
+    height:30px;
+    margin: 0 auto;
+    margin-top:5px;
+    margin-left:10px;
+    background: rgb(199, 95, 113);
+    color:white;
+    padding-top:5px;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+}
+
+#menu3button:hover{
+    transition: all .3s ease-out;
+    background: rgb(151, 23, 87);
+}
+
+
+#menu4button{
+    width:150px;
+    height:50px;
+    margin: 0 auto;
+    margin-top:20px;
+    background: rgb(33, 108, 179);
+    color:white;
+    padding-top:15px;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+}
+
+#menu4button:hover{
+    transition: all .3s ease-out;
+    background: rgb(11, 59, 104);
+}
+
+#menu5button{
+    width:150px;
+    height:50px;
+    margin: 0 auto;
+    margin-top:20px;
+    background: rgb(85, 85, 85);
+    color:white;
+    padding-top:15px;
+    text-align: center;
+    display: inline-block;
+    cursor:pointer;
+}
+
+#menu5button:hover{
+    transition: all .3s ease-out;
+    background: rgb(59, 59, 59);
+}
+/* 댓글 리스트 끝*/

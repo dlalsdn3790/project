@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member">
+	<resultMap id="memberResultSet" type="Member">
+		<id column="MID" property="mId" />
+		<result column="MNICKNAME" property="mNickname" />
+		<result column="MNAME" property="mName" />
+		<result column="MEMAIL" property="mEmail" />
+		<result column="MGENDER" property="mGender" />
+		<result column="MAGE" property="mAge" />
+		<result column="MBIRTHDAY" property="mBirthday" />
+		<result column="MIMG" property="mImg" />
+		<result column="MROUTE" property="mRoute" />
+		<result column="MACCESS" property="mAccess" />
+	</resultMap>
+
+	<select id="checkMember" resultMap="memberResultSet"
+		parameterType="Member">
+		SELECT * FROM MEMBER WHERE MID = #{mId}
+	</select>
+
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER
+		VALUES(#{mId}, #{mNickname}, #{mName}, #{mEmail}, #{mGender}, #{mAge},
+		#{mBirthday}, #{mImg}, #{mRoute}, #{mAccess})
+	</insert>
+	<update id="updateMember">
+		UPDATE MEMBER SET MACCESS = 'company' WHERE MID= #{eId}
+	</update>
+<!-- 	
+	로그인 정보 조회용 쿼리문
+	<select id="loginCheck" resultMap="memberResultSet" parameterType="Member">
+		SELECT *
+		FROM MEMBER
+		WHERE USER_ID = #{userId}
+		AND USER_PWD = #{userPwd}
+		AND STATUS='Y'
+	</select>
+	
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER 
+		VALUES(SEQ_MID.NEXTVAL, #{ userId }, #{ userPwd },
+		                         #{ userName }, #{ email }, #{ birthDay }, 
+		                         #{ gender }, #{ phone }, #{ address }, 
+		                         SYSDATE, SYSDATE, DEFAULT)
+	</insert>
+	
+	<select id="selectPwd" parameterType="string" resultType="string">
+		select user_pwd
+		from member 
+		where user_id = #{userId}
+			  and status='Y'
+	</select>
+	
+	<select id="selectLoginUser" parameterType="Member" resultMap="memberResultSet">
+		select *
+		from member
+		where user_id=#{userId} and status='Y'
+	</select> -->
+</mapper>

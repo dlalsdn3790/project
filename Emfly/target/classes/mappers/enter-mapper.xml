@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="EnterMapper">
+   <resultMap id="enterResultSet" type="Enter">
+      <id column="EID" property="eId" />
+      <result column="EACCESS" property="eAccess" />
+      <result column="ENAME" property="eName" />
+      <result column="ORIGINNAME" property="originName" />
+      <result column="CHANGENAME" property="changeName" />
+   </resultMap>
+   
+   <insert id="enterInsert" parameterType="Enter">
+      INSERT INTO ENTER
+      VALUES(#{eId}, #{eAccess}, #{eName}, #{originName}, #{changeName})
+   </insert>
+   
+	<select id="listAll" resultMap="enterResultSet">
+ 		select * from enter
+ 	</select>
+ 	
+ 	<update id="updateEnter">
+		UPDATE ENTER SET EACCESS = 'company' WHERE EID= #{eId}
+	</update>
+
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- XML 문서의 유효성 체크를 위해 필요한 부분 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Answer">
+	<!-- 여기 오면 일단 결과를 돌려받을 resultMap부터 생성 -->
+	<resultMap id="AnswerResultSet" type="Answer">
+		<id column="AID" property="aId" />
+		<result column="QUESTION1" property="question1" />
+		<result column="ANSWER1" property="answer1" />
+		<result column="QUESTION2" property="question2" />
+		<result column="ANSWER2" property="answer2" />
+		<result column="QUESTION3" property="question3" />
+		<result column="ANSWER3" property="answer3" />
+		<result column="ADDDATE" property="addDate" />
+		<result column="WRITERID" property="writerId" />
+	</resultMap>
+
+	<insert id="questionInsert" parameterType="Answer">
+ 		insert into answer
+ 		values(aId.nextval,#{question1},#{answer1},#{question2},#{answer2},#{question3},#{answer3},sysdate,#{writerId})
+ 	</insert>
+ 	
+ 	<select id="listAll" resultMap="AnswerResultSet">
+	select * from answer where writerId = #{mEmail}
+	</select>
+ 	
+</mapper>  

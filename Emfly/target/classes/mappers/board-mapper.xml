@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace ="board">
+
+<resultMap type="Board" id="boardResultSet">
+      <id column="BID" property="bId"/>
+      <result column="BTITLE" property="bTitle"/>
+      <result column="BCONTENT" property="bContent"/>
+      <result column="MID" property="mId"/>
+      <result column="MNICKNAME" property="mNickname"/>
+      <result column="BCOUNT" property="bCount"/>
+      <result column="CREATE_DATE" property="createDate"/>
+      <result column="MODIFY_DATE" property="modifyDate"/>
+   </resultMap>
+   
+
+   
+   <!-- 게시판 리스트 -->
+   <select id="selectList" resultMap="boardResultSet">
+      <include refid="pagingHeader"/>
+      select *
+      from board
+      <!-- WHERE절을 include태그로 삽입 -->
+      <include refid="search"/>
+      order by bid desc
+      <include refid="pagingFooter"/>
+      
+   </select>
+   
+   <!-- 페이징 sql -->
+   <sql id="pagingHeader">
+      select * from(
+      select rownum as rn, a.* from(
+   </sql>
+   <sql id="pagingFooter">
+         ) a
+      ) where rn between #{start} and #{end}
+   </sql>
+   
+   <!-- 게시판 리스트 게시글 레코드 갯수 -->
+   <select id="countArticle" resultType="_int">
+      select count(*)
+      from board
+      <!-- WHERE절을 include태그로 삽입 -->
+      <include refid="search"/>
+   </select>
+   
+   <!-- sql code 조각 -->
+   <!-- 반복되는 sql의 일부를 sql태그를 이용하여 따로 뺼수있다. -->
+   <sql id="search">
+      where mNickname like '%' || #{keyword}||'%'
+      or bContent like '%' || #{keyword}||'%'
+      or bTitle like '%' || #{keyword}||'%'      
+   </sql>
+   
+   <!-- 게시판 상세보기 -->
+   <select id="selectBoard" resultMap="boardResultSet">
+      select *
+      from board
+      where bid =#{bId}
+   </select>
+   
+   <!-- 게시판 조회수 -->
+   <update id="addReadCount" parameterType="_int">
+      update board
+      set bCount = bCount + 1
+      where bid =#{bId}
+   </update>
+   
+   <!-- 게시글 삽입 -->
+   <insert id="boardInsert" parameterType="Board">
+      insert into board
+      values(bid.nextval, #{bTitle}, #{bContent}, #{mId} ,#{mNickname}, default,
+            sysdate, sysdate )
+   </insert>
+   
+   <!-- 게시글 수정 -->
+   <update id="boardUpdate" parameterType="Board">
+      update board set
+      bTitle = #{bTitle},
+      bContent = #{bContent}
+      where bid = #{bId}
+   </update>
+   
+   <!-- 게시글 삭제 -->
+   <delete id="boardDelete" parameterType="Board">
+      delete from board
+      where bid = #{bId}
+   </delete>
+
+   <!-- 업데이트시 내용 가져오기 -->
+   <select id="getBoard" resultMap="boardResultSet">
+      select *
+      from board
+      where bid =#{bId}
+   </select>
+</mapper>
